@@ -4,14 +4,14 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 39.108.126.102:8848
+        server-addr: 47.115.142.193:8848
       discovery:
-        server-addr: 39.108.126.102:8848
+        server-addr: 47.115.142.193:8848
       sentinel:
         datasource:
           ds1:
             nacos:
-              server-addr: 39.108.126.102:8848
+              server-addr: 347.115.142.193:8848
               dataId: ${spring.application.name}-flow-rules
               data-type: json
               rule-type: flow
