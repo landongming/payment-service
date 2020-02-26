@@ -19,7 +19,7 @@ public class PaymentController {
     private int sleep;
 
     final static Map<Integer, Balance> balanceMap = new HashMap() {{
-            put(1, new Balance(1, 10, 1111));
+            put(1, new Balance(1, 10, 17));
             put(2, new Balance(2, 0, 10000));
             put(3, new Balance(3, 100, 0));
         }
@@ -43,6 +43,6 @@ public class PaymentController {
     }
 
     public Balance handleBlock(Integer id, BlockException e) {
-        return new Balance(0, 0, 0, "限流测试16");
+        return new Balance(0, 0, 0, "限流测试17");
     }
 }
