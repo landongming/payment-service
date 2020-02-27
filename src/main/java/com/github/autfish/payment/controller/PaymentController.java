@@ -19,7 +19,7 @@ public class PaymentController {
     private int sleep;
 
     final static Map<Integer, Balance> balanceMap = new HashMap() {{
-            put(1, new Balance(1, 10, 17));
+            put(1, new Balance(1, 10, 18));
             put(2, new Balance(2, 0, 10000));
             put(3, new Balance(3, 100, 0));
         }
@@ -29,13 +29,6 @@ public class PaymentController {
     @SentinelResource(value = "protected-resource", blockHandler = "handleBlock")
     public Balance getBalance(Integer id) {
         System.out.println("request: /pay/balance?id=" + id + ", sleep: " + sleep);
-        if(sleep > 0) {
-            try {
-                Thread.sleep(sleep);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
         if(id != null && balanceMap.containsKey(id)) {
             return balanceMap.get(id);
         }
@@ -43,6 +36,6 @@ public class PaymentController {
     }
 
     public Balance handleBlock(Integer id, BlockException e) {
-        return new Balance(0, 0, 0, "限流测试17");
+        return new Balance(0, 0, 0, "限流测试18");
     }
 }
